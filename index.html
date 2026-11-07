@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Glow Coffee — кофейня, творческие мастер-классы и сообщество. Приходят за кофе, остаются ради творчества и эмоций.">
+<title>Glow Coffee — кофе, творчество и эмоции</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+:root{--pink:#f9eaf0;--pink2:#f4d7e1;--rose:#a64d6c;--deep:#71364d;--ink:#392832;--muted:#806d76;--cream:#fff9fa;--gold:#d9a84d;--line:#efd9e1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'Manrope',Arial,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}
+.wrap{width:min(1160px,calc(100% - 44px));margin:auto}.announcement{background:var(--deep);color:#fff5f7;text-align:center;padding:9px 15px;font-size:11px;letter-spacing:1.6px;text-transform:uppercase}
+header{position:sticky;top:0;z-index:20;background:#fff9faeF;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px}.logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:30px;letter-spacing:-1px;color:var(--deep);line-height:.85}.logo small{display:block;font:9px 'Manrope';letter-spacing:3px;text-align:center;margin-top:7px;color:var(--rose)}.links{display:flex;gap:27px;font-size:12px;color:var(--muted)}.links a:hover{color:var(--rose)}.navbtn,.btn{border:0;background:var(--rose);color:white;padding:13px 21px;border-radius:4px;font-size:12px;letter-spacing:.5px;cursor:pointer;display:inline-block;transition:.2s}.navbtn:hover,.btn:hover{background:var(--deep);transform:translateY(-2px)}.hamb{display:none;border:1px solid var(--line);background:transparent;padding:8px 12px;font-size:20px;color:var(--deep)}
+.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 76% 45%,#f4c9d7 0,transparent 34%),radial-gradient(ellipse at 8% 5%,#f8dce6 0,transparent 25%),var(--pink);padding:76px 0 70px}.hero:after{content:"✳";position:absolute;right:4%;top:4%;font-size:160px;color:#fff8;transform:rotate(14deg)}.hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:45px;position:relative;z-index:1}.kicker{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--rose);font-weight:700}.hero h1{font:500 clamp(55px,7vw,92px)/.88 'Cormorant Garamond',serif;letter-spacing:-2px;color:var(--deep);margin:20px 0}.hero h1 em{font-weight:400;color:var(--rose)}.hero p{max-width:460px;color:#795d69;font-size:14px;line-height:1.9}.hero-actions{display:flex;align-items:center;gap:22px;margin-top:28px;flex-wrap:wrap}.underlink{font-size:12px;color:var(--deep);border-bottom:1px solid var(--rose);padding:10px 0}.hero-art{height:445px;position:relative;display:grid;place-items:center}.orb{width:330px;height:330px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff7fa,#e7a8bf 55%,#c76d91);box-shadow:0 25px 65px #a64d6c33;position:absolute}.drink{position:relative;z-index:1;width:190px;height:260px;border-radius:22px 22px 50px 50px;background:linear-gradient(90deg,#f8d9e3,#fff5f6 45%,#e7b2c4);box-shadow:15px 25px 30px #71364d44;transform:rotate(5deg);border:5px solid #fff8}.drink:before{content:"";position:absolute;left:8px;right:8px;top:12px;height:60px;border-radius:50%;background:linear-gradient(120deg,#6d9a6c,#d8e5bd 60%,#e9a9bd)}.drink:after{content:"glow";position:absolute;top:115px;left:0;right:0;text-align:center;font:italic 34px 'Cormorant Garamond';color:#a64d6c}.straw{position:absolute;z-index:2;width:8px;height:180px;background:#fff7f8;top:35px;left:54%;transform:rotate(14deg);border-radius:8px}.flower{position:absolute;z-index:2;font-size:65px;right:2%;bottom:30px;transform:rotate(12deg)}.floating{position:absolute;z-index:3;background:#fff9;border:1px solid #fff;padding:12px 16px;border-radius:50px;font:italic 18px 'Cormorant Garamond';color:var(--deep);box-shadow:0 10px 25px #71364d12}.f1{top:50px;left:0}.f2{bottom:35px;left:5%}
+section{padding:88px 0}.section-head{text-align:center;max-width:650px;margin:0 auto 42px}.section-head h2{font:500 clamp(40px,5vw,58px)/1 'Cormorant Garamond';color:var(--deep);margin:12px 0}.section-head p{font-size:13px;line-height:1.8;color:var(--muted)}.menu-tabs{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:0 auto 30px}.tab{border:1px solid var(--line);background:white;color:var(--muted);padding:10px 17px;border-radius:30px;font-size:11px;cursor:pointer}.tab.active,.tab:hover{background:var(--deep);color:white;border-color:var(--deep)}.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.menu-card{background:white;border:1px solid var(--line);padding:20px 21px;min-height:142px;position:relative;transition:.2s}.menu-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px #71364d12}.menu-card .emoji{font-size:25px}.menu-card h3{font:600 23px 'Cormorant Garamond';margin:10px 0 4px;color:var(--deep)}.menu-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.6}
+.menu-card{padding:0;overflow:hidden;min-height:0;display:flex;flex-direction:column}
+.menu-photo{display:block;width:100%;height:170px;object-fit:contain;background:#fff8fa;padding:8px}
+.menu-info{padding:4px 18px 19px;flex:1}
+.menu-info h3{margin:7px 0 4px}
+@media(max-width:650px){.menu-photo{height:145px}.menu-info{padding:3px 12px 15px}}
+
+.menu-note{text-align:center;color:var(--muted);font-size:11px;margin-top:25px}
+.signature{background:var(--pink);position:relative;overflow:hidden}.signature-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}.signature-art{min-height:410px;border-radius:48% 48% 8px 8px;background:radial-gradient(circle at 50% 40%,#fff4f7 0 20%,transparent 21%),linear-gradient(145deg,#f0b9cc,#d77f9f);position:relative;display:grid;place-items:center;overflow:hidden}.signature-art:before{content:"✿";font-size:220px;color:#fff9;position:absolute}.signature-cup{z-index:1;width:145px;height:190px;border-radius:15px 15px 40px 40px;background:linear-gradient(90deg,#fff,#f4dce4,#fff);box-shadow:15px 20px 30px #71364d33;display:grid;place-items:center;color:var(--rose);font:italic 30px 'Cormorant Garamond';transform:rotate(-7deg)}.signature-copy h2{font:500 clamp(40px,5vw,58px)/.98 'Cormorant Garamond';color:var(--deep);margin:15px 0}.signature-copy p{font-size:13px;line-height:1.9;color:#795d69}.drink-tags{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0}.drink-tags span{padding:9px 12px;border:1px solid #dca6b9;border-radius:30px;color:var(--deep);font:italic 16px 'Cormorant Garamond';background:#fff6}
+.creative{background:#fff9fa}.workshops{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}.workshop{min-height:245px;padding:22px 17px;background:var(--pink);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;transition:.2s}.workshop:hover{background:#f5dce5;transform:translateY(-5px)}.workshop .symbol{font-size:35px}.workshop h3{font:600 25px 'Cormorant Garamond';color:var(--deep);margin:17px 0 8px}.workshop p{font-size:11px;line-height:1.7;color:var(--muted);margin:0}.workshop a{font-size:10px;color:var(--rose);margin-top:16px;letter-spacing:.6px}
+.more{background:#f8edf1}.more-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.more-card{padding:27px;background:#fff;border:1px solid var(--line);display:flex;gap:18px;align-items:flex-start}.more-card .symbol{font-size:29px}.more-card h3{font:600 24px 'Cormorant Garamond';color:var(--deep);margin:0 0 7px}.more-card p{font-size:11px;line-height:1.8;color:var(--muted);margin:0}
+.community{background:var(--deep);color:#fff5f7;text-align:center}.community .kicker{color:#edb7c9}.community h2{font:500 clamp(42px,5vw,60px)/1 'Cormorant Garamond';margin:13px 0}.community p{max-width:670px;margin:0 auto 28px;font-size:13px;line-height:1.9;color:#ead4dc}.community .btn{background:#f5dbe4;color:var(--deep)}.community .btn:hover{background:white}
+.visit{background:var(--pink);}.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}.visit h2{font:500 55px 'Cormorant Garamond';color:var(--deep);margin:10px 0}.visit p{font-size:13px;line-height:1.8;color:var(--muted)}.contact-box{background:#fff;padding:27px;border:1px solid var(--line)}.contact-row{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid var(--line);font-size:12px}.contact-row:last-child{border:0}.contact-row span{color:var(--muted)}.contact-row strong{color:var(--deep);font-weight:600}.contact-hint{font-size:10px!important;margin-top:15px}
+footer{background:#392832;color:#e9d4dc;padding:28px 0}.foot{display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap;font-size:10px}.foot .logo{color:white}
+@media(max-width:850px){.links{gap:14px}.hero-grid{gap:20px}.hero-art{height:360px}.orb{width:270px;height:270px}.drink{transform:scale(.85) rotate(5deg)}.workshops{grid-template-columns:repeat(3,1fr)}.signature-grid{gap:30px}}
+@media(max-width:650px){.wrap{width:min(100% - 32px,520px)}.nav{height:66px}.hamb{display:block}.links{display:none;position:absolute;top:66px;left:0;right:0;background:#fff9fa;padding:20px 24px;border-bottom:1px solid var(--line);flex-direction:column}.links.open{display:flex}.navbtn{display:none}.hero{padding:55px 0 30px}.hero-grid,.signature-grid,.visit-grid{grid-template-columns:1fr}.hero h1{font-size:64px}.hero-art{height:330px}.orb{width:250px;height:250px}.drink{transform:scale(.78) rotate(5deg)}.floating{font-size:15px}.hero:after{font-size:90px}section{padding:65px 0}.menu-grid{grid-template-columns:1fr 1fr}.signature-art{min-height:300px;order:2}.workshops{grid-template-columns:1fr 1fr}.workshop{min-height:210px}.more-grid{grid-template-columns:1fr}.section-head{margin-bottom:30px}}
+@media(max-width:390px){.menu-grid{grid-template-columns:1fr}.workshops{grid-template-columns:1fr}.workshop{min-height:175px}.contact-row{font-size:11px}}
+.menu-card[hidden] {
+    display: none !important;
+</style>
+</head>
+<body>
+<div class="announcement">Glow Coffee · Glow Creative · пространство для вдохновения</div>
+<header><div class="wrap nav">
+<a class="logo" href="#home">glow coffee<small>CREATIVE COMMUNITY</small></a>
+<nav class="links" id="links"><a href="#menu">МЕНЮ</a><a href="#creative">МАСТЕР-КЛАССЫ</a><a href="#about">О ПРОСТРАНСТВЕ</a><a href="#community">СООБЩЕСТВО</a><a href="#contacts">КОНТАКТЫ</a></nav>
+<a class="navbtn" href="#contacts">НАЙТИ НАС</a><button class="hamb" id="hamb" aria-label="Открыть навигацию">☰</button>
+</div></header>
+<main>
+<section class="hero" id="home"><div class="wrap hero-grid">
+<div><div class="kicker">кофейня · творчество · комьюнити</div>
+<h1>Больше,<br>чем просто<br><em>кофе.</em></h1>
+<p>Glow Coffee — место, куда приходят за кофе, остаются ради творчества и возвращаются за эмоциями. Здесь встречаются идеи, вдохновение и маленькие открытия каждый день.</p>
+<div class="hero-actions"><a class="btn" href="#menu">ОТКРЫТЬ МЕНЮ</a><a class="underlink" href="#creative">Найти своё творчество ↗</a></div></div>
+<div class="hero-art"><div class="orb"></div><div class="drink"></div><div class="straw"></div><div class="floating f1">a little glow ✧</div><div class="floating f2">made with love</div><div class="flower">✿</div></div>
+</div></section>
+
+<section id="menu"><div class="wrap">
+<div class="section-head"><div class="kicker">вкусные поводы заглянуть</div><h2>Меню Glow Coffee</h2><p>Авторские напитки, классика кофейни, завтраки и выпечка — выбирайте то, что подходит вашему настроению.</p></div>
+<div class="menu-tabs">
+<button class="tab active" data-filter="all">Всё меню</button><button class="tab" data-filter="signature">Авторские напитки</button><button class="tab" data-filter="drinks">Кофе и напитки</button><button class="tab" data-filter="breakfast">Завтраки</button><button class="tab" data-filter="baking">Выпечка</button>
+</div>
+<div class="menu-grid" id="menuGrid">
+<article class="menu-card" data-cat="signature"><img class="menu-photo" src="images/bloom-matcha.jpg" alt="Bloom Matcha" loading="lazy"><div class="menu-info"><h3>Bloom Matcha</h3><p>Авторский напиток с цветочным настроением.</p></div></article>
+<article class="menu-card" data-cat="signature"><img class="menu-photo" src="images/pink-cloud-matcha.jpg" alt="Pink Cloud Matcha" loading="lazy"><div class="menu-info"><h3>Pink Cloud Matcha</h3><p>Матча с нежной розовой облачной пенкой.</p></div></article>
+<article class="menu-card" data-cat="signature"><img class="menu-photo" src="images/glow-lemonade.jpg" alt="Glow Lemonade" loading="lazy"><div class="menu-info"><h3>Glow Lemonade</h3><p>Яркий освежающий лимонад Glow.</p></div></article>
+<article class="menu-card" data-cat="signature"><img class="menu-photo" src="images/milkshake.jpg" alt="Milkshake" loading="lazy"><div class="menu-info"><h3>Milkshake</h3><p>Молочный коктейль.</p></div></article>
+<article class="menu-card" data-cat="signature"><img class="menu-photo" src="images/sugar-bomb.jpg" alt="Sugar Bomb" loading="lazy"><div class="menu-info"><h3>Sugar Bomb</h3><p>Эффектный авторский сладкий напиток.</p></div></article>
+<article class="menu-card" data-cat="drinks"><img class="menu-photo" src="images/latte.jpg" alt="Латте" loading="lazy"><div class="menu-info"><h3>Латте</h3><p>Классический кофейный напиток.</p></div></article>
+<article class="menu-card" data-cat="drinks"><img class="menu-photo" src="images/cappuccino.jpg" alt="Капучино" loading="lazy"><div class="menu-info"><h3>Капучино</h3><p>Эспрессо с молоком и воздушной пенкой.</p></div></article>
+<article class="menu-card" data-cat="drinks"><img class="menu-photo" src="images/hot-chocolate.jpg" alt="Горячий шоколад" loading="lazy"><div class="menu-info"><h3>Горячий шоколад</h3><p>Согревающий шоколадный напиток.</p></div></article>
+<article class="menu-card" data-cat="drinks"><img class="menu-photo" src="images/americano.jpg" alt="Американо" loading="lazy"><div class="menu-info"><h3>Американо</h3><p>Кофейная классика.</p></div></article>
+<article class="menu-card" data-cat="drinks"><img class="menu-photo" src="images/espresso.jpg" alt="Эспрессо" loading="lazy"><div class="menu-info"><h3>Эспрессо</h3><p>Насыщенный кофе небольшого объёма.</p></div></article>
+<article class="menu-card" data-cat="breakfast"><img class="menu-photo" src="images/smoothie-bowl.jpg" alt="Смузи-боул ягодный" loading="lazy"><div class="menu-info"><h3>Смузи-боул ягодный</h3><p>Ягодная основа с добавками.</p></div></article>
+<article class="menu-card" data-cat="breakfast"><img class="menu-photo" src="images/chia-pudding.jpg" alt="Чиа-пуддинг с манговой пенкой" loading="lazy"><div class="menu-info"><h3>Чиа-пуддинг с манговой пенкой</h3><p>Нежный пуддинг с манговой пенкой.</p></div></article>
+<article class="menu-card" data-cat="breakfast"><img class="menu-photo" src="images/syrniki.jpg" alt="Сырники" loading="lazy"><div class="menu-info"><h3>Сырники</h3><p>Со сметаной и вишнёвым джемом.</p></div></article>
+<article class="menu-card" data-cat="breakfast"><img class="menu-photo" src="images/breakfast-croissant.jpg" alt="Круассан «Английский завтрак»" loading="lazy"><div class="menu-info"><h3>Круассан «Английский завтрак»</h3><p>Сытный круассан с начинкой.</p></div></article>
+<article class="menu-card" data-cat="breakfast"><img class="menu-photo" src="images/sandwich.jpg" alt="Сэндвич" loading="lazy"><div class="menu-info"><h3>Сэндвич</h3><p>Сытный вариант для перекуса.</p></div></article>
+<article class="menu-card" data-cat="breakfast"><img class="menu-photo" src="images/caesar-shrimp.jpg" alt="Цезарь с креветками" loading="lazy"><div class="menu-info"><h3>Цезарь с креветками</h3><p>Салат с креветками.</p></div></article>
+<article class="menu-card" data-cat="baking"><img class="menu-photo" src="images/croissant.jpg" alt="Круассан" loading="lazy"><div class="menu-info"><h3>Круассан</h3><p>Классическая слоёная выпечка.</p></div></article>
+<article class="menu-card" data-cat="baking"><img class="menu-photo" src="images/almond-croissant.jpg" alt="Круассан миндальный" loading="lazy"><div class="menu-info"><h3>Круассан миндальный</h3><p>Круассан с миндальной начинкой.</p></div></article>
+<article class="menu-card" data-cat="baking"><img class="menu-photo" src="images/lemon-cake.jpg" alt="Кекс лимонный с цедрой" loading="lazy"><div class="menu-info"><h3>Кекс лимонный с цедрой</h3><p>Нежный кекс с цитрусовой ноткой.</p></div></article>
+<article class="menu-card" data-cat="baking"><img class="menu-photo" src="images/lemon-muffin.jpg" alt="Лимонный маффин" loading="lazy"><div class="menu-info"><h3>Лимонный маффин</h3><p>Порционный лимонный десерт.</p></div></article>
+<article class="menu-card" data-cat="baking"><img class="menu-photo" src="images/granola-cookie.jpg" alt="Печенье гранола" loading="lazy"><div class="menu-info"><h3>Печенье гранола</h3><p>Печенье с гранолой.</p></div></article>
+<article class="menu-card" data-cat="baking"><img class="menu-photo" src="images/condensed-milk-tube.jpg" alt="Трубочка со сгущёнкой" loading="lazy"><div class="menu-info"><h3>Трубочка со сгущёнкой</h3><p>Хрустящая трубочка со сгущёнкой.</p></div></article>
+</div>
+<p class="menu-note">Состав и наличие позиций могут меняться.</p>
+</div></section>
+
+<section class="signature"><div class="wrap signature-grid">
+<div class="signature-art"><div class="signature-cup">glow</div></div>
+<div class="signature-copy"><div class="kicker">необычные сочетания</div><h2>Попробуйте<br>что-то новое</h2><p>Авторские напитки Glow Coffee — маленькое настроение в стакане. Цвет, вкус и подача создают особенный момент, который хочется запомнить.</p><div class="drink-tags"><span>Bloom Matcha</span><span>Pink Cloud Matcha</span><span>Glow Lemonade</span><span>Milkshake</span><span>Sugar Bomb</span></div><a class="underlink" href="#menu">Выбрать напиток ↗</a></div>
+</div></section>
+
+<section class="creative" id="creative"><div class="wrap">
+<div class="section-head"><div class="kicker">попробуйте себя в новом</div><h2>Творчество начинается здесь</h2><p>Мастер-классы Glow Creative — возможность создать вещь своими руками, освоить новое хобби и провести время в приятной компании.</p></div>
+<div class="workshops">
+<article class="workshop"><div><div class="symbol">🏺</div><h3>Керамика</h3><p>Лепка и роспись керамики. Создайте собственную кружку, пиалу или необычное изделие.</p></div><a href="#contacts">УЗНАТЬ ПОДРОБНОСТИ ↗</a></article>
+<article class="workshop"><div><div class="symbol">🧴</div><h3>Парфюмерия</h3><p>Познакомьтесь с ароматическими маслами и парфюмерными композициями, создайте свой аромат.</p></div><a href="#contacts">УЗНАТЬ ПОДРОБНОСТИ ↗</a></article>
+<article class="workshop"><div><div class="symbol">🕯️</div><h3>Свечи</h3><p>Освойте заливку и скрутку свечей, поэкспериментируйте с формами, цветами и ароматами.</p></div><a href="#contacts">УЗНАТЬ ПОДРОБНОСТИ ↗</a></article>
+<article class="workshop"><div><div class="symbol">💐</div><h3>Цветочная история</h3><p>Составляйте цветочные композиции, выбирайте сочетания и создавайте собственные букеты.</p></div><a href="#contacts">УЗНАТЬ ПОДРОБНОСТИ ↗</a></article>
+<article class="workshop"><div><div class="symbol">🎨</div><h3>Барка и роспись</h3><p>Творческий мастер-класс с росписью кофейных поверхностей и созданием авторского напитка.</p></div><a href="#contacts">УЗНАТЬ ПОДРОБНОСТИ ↗</a></article>
+</div>
+</div></section>
+
+<section class="more" id="about"><div class="wrap">
+<div class="section-head"><div class="kicker">больше, чем кофе</div><h2>Пространство для своих идей</h2><p>Glow — это не только кофейня. Это место, где можно работать, отдыхать, знакомиться и вдохновляться.</p></div>
+<div class="more-grid">
+<article class="more-card"><div class="symbol">✦</div><div><h3>Кофе и привилегии</h3><p>Подписка, абонемент, карта лояльности и специальные предложения для гостей.</p></div></article>
+<article class="more-card"><div class="symbol">☼</div><div><h3>Пространство для работы и отдыха</h3><p>Зона для фрилансеров, уютные места у окна, авторская мебель и растения.</p></div></article>
+<article class="more-card"><div class="symbol">✧</div><div><h3>События и впечатления</h3><p>Киновечера, лекции и тематические встречи.</p></div></article>
+<article class="more-card"><div class="symbol">♡</div><div><h3>Glow Community</h3><p>Сообщество единомышленников, творческих людей и новых приятных знакомств.</p></div></article>
+<article class="more-card"><div class="symbol">⌘</div><div><h3>Онлайн-сервисы</h3><p>Сайт, приложение, онлайн-заказ и Glow Chat.</p></div></article>
+<article class="more-card"><div class="symbol">❀</div><div><h3>Забота о гостях</h3><p>Аренда зонтов и дополнительные привилегии для комфортного визита.</p></div></article>
+</div>
+</div></section>
+
+<section class="community" id="community"><div class="wrap"><div class="kicker">glow community</div><h2>Приходите за кофе.<br>Оставайтесь за эмоциями.</h2><p>Главная идея Glow — создать не просто кофейню, а место, где люди находят друзей, единомышленников и новые возможности. Здесь каждый визит может стать источником вдохновения.</p><a class="btn" href="https://www.instagram.com/glowcoffees/" target="_blank" rel="noopener">МЫ В СОЦСЕТЯХ · @GLOWCOFFEES</a></div></section>
+
+<section class="visit" id="contacts"><div class="wrap visit-grid">
+<div><div class="kicker">будем рады знакомству</div><h2>До встречи<br>в Glow!</h2><p>Следите за новостями, расписанием мастер-классов и обновлениями меню в соцсетях.</p><a class="btn" href="https://www.instagram.com/glowcoffees/" target="_blank" rel="noopener">НАША СТРАНИЦА ↗</a></div>
+<div class="contact-box"><div class="contact-row"><span>Название</span><strong>Glow Coffee / Glow Creative</strong></div><div class="contact-row"><span>Сообщество</span><strong>@GLOWCOFFEES</strong></div><div class="contact-row"><span>Направления</span><strong>Кофе · Мастер-классы · События</strong></div><p class="contact-hint">Адрес, телефон, часы работы и расписание занятий в исходных материалах не указаны. Добавьте их сюда перед публикацией сайта.</p></div>
+</div></section>
+</main>
+<footer><div class="wrap foot"><a class="logo" href="#home">glow coffee<small>CREATIVE COMMUNITY</small></a><span>© 2026 Glow Coffee · Glow Creative</span><span>Создано для вдохновения ✧</span></div></footer>
+<script>
+const tabs=document.querySelectorAll('.tab'),cards=document.querySelectorAll('.menu-card');
+tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));tab.classList.add('active');const f=tab.dataset.filter;cards.forEach(c=>c.hidden=f!=='all'&&c.dataset.cat!==f)}));
+const hamb=document.getElementById('hamb'),links=document.getElementById('links');hamb.addEventListener('click',()=>links.classList.toggle('open'));links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+</script>
+</body></html>
